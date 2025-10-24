@@ -1,0 +1,9 @@
+
+/* Configure daisyUI in tailwind.config.js instead of using an unsupported @plugin rule. */
+
+@import "tailwindcss";
+@plugin "daisyui";
+
+.body {
+  scrollbar-width: none;
+}
