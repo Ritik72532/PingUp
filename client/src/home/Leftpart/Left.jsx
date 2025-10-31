@@ -6,7 +6,10 @@ function Left  ()  {
   return (
     <div className="w-[30%]  text-gray-300 bg-black">
      <Search/>
-     <Users/>
+       <div className='body overflow-y-auto' style={{minHeight: "calc(84vh - 10vh)"}}>
+        <Users/>
+     </div>
+    
      <Logout/>
     
      
