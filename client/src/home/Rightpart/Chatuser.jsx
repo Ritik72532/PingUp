@@ -1,6 +1,4 @@
 import useConversation from "../../zustand/useConversation"
-
-
 function Chatuser() {
         const {selectedConversation} = useConversation();
         console.log(selectedConversation);

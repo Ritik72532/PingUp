@@ -1,5 +1,5 @@
 import  { createContext, useContext, useState } from 'react';
-import Cookies from "js-cookie";
+// import Cookies from "js-cookie";
 export const Authcontext = createContext()
 export const AuthProvider= ({children})=> {
 //   console.log("Cookie:", Cookies.get("jwt"));

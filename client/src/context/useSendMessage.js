@@ -1,4 +1,5 @@
 import useConversation from "../zustand/useConversation.js";
+import { useState } from "react";
 import axios from "axios";
 const useSendMessage = () => {
     const [loading,setLoading] = useState(false)
@@ -7,7 +8,7 @@ const useSendMessage = () => {
             setLoading(true)
           
              try {
-                const response = await axios.get(`/api/message/send/${selectedConversation._id}`)  // ,{message}
+                const response = await axios.post(`/api/message/send/${selectedConversation._id}` ,{message})  //
                 setMessages([...messages,response.data]);
                 setLoading(false)
             } catch (error) {

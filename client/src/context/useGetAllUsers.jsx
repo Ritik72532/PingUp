@@ -16,7 +16,7 @@ useEffect(()=>{
             Authorization: `Bearer ${token}`
         }
       })
-      setAllUsers(response.data)
+      setAllUsers(response.data);
       setLoading(false)
     } catch (error) {
        console.log("Error in useGetAllUsers"+ error);

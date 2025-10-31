@@ -26,10 +26,10 @@ export const sendMessage = async(req,res)=>{
     // await conversation.save()
     // await newMessage.save()
     await Promise.all([conversation.save(),newMessage.save()]);
-    res.status(201).json({
-        message: "Message sent successfully",
+    res.status(201).json(
+       
         newMessage
-    })
+    )
   } catch (error) {
     console.log("Error in sendMessage",error);
    res.status(500).json({message:"Internal serval error"})
