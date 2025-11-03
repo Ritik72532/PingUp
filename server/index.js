@@ -5,7 +5,8 @@ import userRoute from "./src/routes/user.route.js";
 import messageRoute from "./src/routes/message.route.js";
 import cors from "cors";
 import cookieParser from "cookie-parser";
-const app = express();
+import { app, server } from "./SocketIO/server.js";
+
 // new
 app.use(cors({
   origin: "http://localhost:3001", // Your Vite dev server
@@ -30,6 +31,6 @@ try {
 app.use("/api/user",userRoute)
 app.use("/api/message",messageRoute)
 
-app.listen(PORT, () => {
+server.listen(PORT, () => {
   console.log(`Example app listening on port ${PORT}`)
 })

@@ -5,7 +5,7 @@ export const AuthProvider= ({children})=> {
 //   console.log("Cookie:", Cookies.get("jwt"));
 // console.log("LocalStorage:", localStorage.getItem("Pingup"));
 
-    const initialUserState =  localStorage.getItem("Pingup");
+    const initialUserState =  sessionStorage.getItem("Pingup");
    
     
     // parse the data and store in state

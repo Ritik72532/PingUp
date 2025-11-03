@@ -54,7 +54,8 @@ function Login() {
         alert(" Login successful!");
         console.log(response.data);
 
-        localStorage.setItem("Pingup", JSON.stringify(response.data.user));
+      sessionStorage.setItem("Pingup", JSON.stringify(response.data.user));
+
         setAuthUser(response.data.user);
         setFormData({ email: "", password: "" });
       } catch (error) {

@@ -1,4 +1,4 @@
-
+import useGetSocketMessage from '../../context/useGetSocketMessage.js';
 import useGetMessage from '../../context/useGetMessage.js';
 import Loading from "../../components/Loading.jsx";
 import Message from './Message.jsx';
@@ -6,6 +6,8 @@ import { useEffect, useRef } from 'react';
 
 function Messages() {
     const {loading,messages} = useGetMessage();
+    // listeninig incoming messages 
+    useGetSocketMessage();
     console.log(messages);
     const lastMsgRef = useRef();
     useEffect(()=>{
@@ -19,7 +21,10 @@ function Messages() {
     return (
         <div className='body overflow-y-auto' style={{minHeight: "calc(92vh - 8vh )"}}>
             {loading ?(<Loading/>):(messages.length>0 && messages.map((message)=>(
-                <Message key ={message._id} message={message} />
+                <div key ={message._id} ref={lastMsgRef}>
+                      <Message  message={message} />
+                </div>
+              
             )
             ))}
            { !loading && messages.length ===0 && (
