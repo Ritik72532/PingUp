@@ -20,7 +20,7 @@ function Messages() {
     
     return (
         <div className='body overflow-y-auto' style={{minHeight: "calc(92vh - 8vh )"}}>
-            {loading ?(<Loading/>):(messages.length>0 && messages.map((message)=>(
+            {loading ?(<Loading/>):(Array.isArray(messages)&&messages.length>0 && messages.map((message)=>(
                 <div key ={message._id} ref={lastMsgRef}>
                       <Message  message={message} />
                 </div>
